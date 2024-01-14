@@ -5,10 +5,10 @@ import cookieSession from "cookie-session";
 
 import { currentUser, errorHandler, NotFoundError } from "@mmgittix/common";
 
-import { createOrderRouter } from "./routes/create";
-import { deleteOrderRouter } from "./routes/delete";
 import { indexOrderRouter } from "./routes";
+import { createOrderRouter } from "./routes/create";
 import { readOrderRouter } from "./routes/read";
+import { deleteOrderRouter } from "./routes/delete";
 
 export const app = express();
 
@@ -20,10 +20,10 @@ app.use(
 );
 app.use(currentUser);
 
-app.use(createOrderRouter);
-app.use(deleteOrderRouter);
 app.use(indexOrderRouter);
+app.use(createOrderRouter);
 app.use(readOrderRouter);
+app.use(deleteOrderRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();

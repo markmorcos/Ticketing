@@ -3,7 +3,7 @@ import { sign } from "jsonwebtoken";
 import request from "supertest";
 
 import { app } from "../app";
-import { OrderAttrs, OrderPayload } from "../models/order";
+import { OrderPayload } from "../models/order";
 import { Ticket } from "../models/ticket";
 
 export const signIn = (id = new Types.ObjectId().toHexString()) => {

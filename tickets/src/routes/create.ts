@@ -4,8 +4,8 @@ import { body } from "express-validator";
 import { requireAuth, validateRequest } from "@mmgittix/common";
 
 import { Ticket } from "../models/ticket";
-import { TicketCreatedPublisher } from "../events/publishers/ticket-created-publisher";
 import { nats } from "../nats";
+import { TicketCreatedPublisher } from "../events/publishers/ticket-created-publisher";
 
 const router = express.Router();
 

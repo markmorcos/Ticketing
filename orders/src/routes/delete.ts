@@ -10,8 +10,8 @@ import {
 } from "@mmgittix/common";
 
 import { Order } from "../models/order";
-import { OrderCancelledPublisher } from "../events/publishers/order-cancelled-publisher";
 import { nats } from "../nats";
+import { OrderCancelledPublisher } from "../events/publishers/order-cancelled-publisher";
 
 const router = express.Router();
 

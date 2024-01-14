@@ -11,8 +11,8 @@ import {
 
 import { Order } from "../models/order";
 import { Ticket } from "../models/ticket";
-import { OrderCreatedPublisher } from "../events/publishers/order-created-publisher";
 import { nats } from "../nats";
+import { OrderCreatedPublisher } from "../events/publishers/order-created-publisher";
 
 const EXPIRATION_WINDOW_SECONDS = 1 * 60;
 

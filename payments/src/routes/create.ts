@@ -10,11 +10,11 @@ import {
   validateRequest,
 } from "@mmgittix/common";
 
-import { nats } from "../nats";
 import { Order } from "../models/order";
 import { Payment } from "../models/payment";
-import { PaymentCreatedPublisher } from "../events/publishers/payment-created-publisher";
+import { nats } from "../nats";
 import { stripe } from "../stripe";
+import { PaymentCreatedPublisher } from "../events/publishers/payment-created-publisher";
 
 const router = express.Router();
 
