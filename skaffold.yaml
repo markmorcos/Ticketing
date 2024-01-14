@@ -2,14 +2,15 @@ apiVersion: skaffold/v4beta8
 kind: Config
 manifests:
   rawYaml:
-    - ./infra/prod/k8s/*
+    - ./infra/k8s/*
+    - ./infra/k8s-dev/*
 deploy:
   kubectl: {}
 build:
-  googleCloudBuild:
-    projectId: ticketing-dev-407701
+  local:
+    push: true
   artifacts:
-    - image: eu.gcr.io/ticketing-dev-407701/auth
+    - image: markmorcos/auth
       context: auth
       sync:
         manual:
@@ -17,7 +18,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: eu.gcr.io/ticketing-dev-407701/tickets
+    - image: markmorcos/tickets
       context: tickets
       sync:
         manual:
@@ -25,7 +26,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: eu.gcr.io/ticketing-dev-407701/orders
+    - image: markmorcos/orders
       context: orders
       sync:
         manual:
@@ -33,7 +34,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: eu.gcr.io/ticketing-dev-407701/expiration
+    - image: markmorcos/expiration
       context: expiration
       sync:
         manual:
@@ -41,7 +42,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: eu.gcr.io/ticketing-dev-407701/payments
+    - image: markmorcos/payments
       context: payments
       sync:
         manual:
@@ -49,7 +50,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: eu.gcr.io/ticketing-dev-407701/client
+    - image: markmorcos/client
       context: client
       sync:
         manual:

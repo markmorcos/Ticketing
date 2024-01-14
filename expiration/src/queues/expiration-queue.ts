@@ -1,8 +1,9 @@
 import Queue from "bull";
 
+import { Subjects } from "@mmgittix/common";
+
 import { nats } from "../nats";
 import { ExpirationCompletePublisher } from "../events/publishers/expiration-complete-publisher";
-import { Subjects } from "@mmgittix/common";
 
 interface Payload {
   orderId: string;

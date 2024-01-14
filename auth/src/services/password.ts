@@ -1,5 +1,4 @@
 import { scryptSync, randomBytes } from "crypto";
-import { promisify } from "util";
 
 export class Password {
   static toHash(password: string) {

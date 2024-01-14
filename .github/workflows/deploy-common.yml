@@ -1,0 +1,21 @@
+name: deploy-common
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "common/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: cd common && npm install && npm run build && npm version patch && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
