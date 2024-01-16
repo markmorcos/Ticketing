@@ -1,4 +1,3 @@
-import Router from "next/router";
 import Link from "next/link";
 
 const OrdersIndex = ({ orders }) => {
@@ -32,8 +31,10 @@ const OrdersIndex = ({ orders }) => {
 OrdersIndex.getInitialProps = async (context, client) => {
   try {
     const { data: orders } = await client.get("/api/orders");
+    console.log("orders", orders);
     return { orders };
   } catch (error) {
+    console.log("error", error);
     return { redirect: { destination: "/", permanent: false } };
   }
 };
