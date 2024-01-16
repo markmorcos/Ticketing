@@ -4,11 +4,11 @@ metadata:
   name: ingress-srv
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.digitalocean.com/load-balancer-id: 4a7c34c0-587f-4508-9475-ea684862ae0f
     service.beta.kubernetes.io/do-loadbalancer-protocol: "https"
     service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
     service.beta.kubernetes.io/do-loadbalancer-hostname: "www.mark-ticketing-app.xyz"
-    service.beta.kubernetes.io/do-loadbalancer-certificate-id: d9799b08-1e7d-43cc-8dc5-9fcf049cef1d
-    kubernetes.digitalocean.com/load-balancer-id: 4a7c34c0-587f-4508-9475-ea684862ae0f
+    service.beta.kubernetes.io/do-loadbalancer-certificate-id: c858c392-c5e7-4441-b831-9e22af08f9e0
 spec:
   ingressClassName: nginx
   rules:
