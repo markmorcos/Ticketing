@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const OrdersIndex = ({ orders }) => {
+  console.log("component orders", orders);
   const orderList = orders.map(
     ({ id, ticket: { id: ticketId, title }, status }) => (
       <tr key={id}>
