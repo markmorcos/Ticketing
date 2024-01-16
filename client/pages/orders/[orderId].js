@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import Router from "next/router";
 
+import redirect from "../../api/redirect";
 import useRequest from "../../hooks/use-request";
 
 const OrderRead = ({ order, currentUser }) => {
@@ -52,7 +53,7 @@ OrderRead.getInitialProps = async (context, client) => {
     const { data: order } = await client.get(`/api/orders/${orderId}`);
     return { order };
   } catch (error) {
-    return { redirect: { destination: "/orders", permanent: false } };
+    return redirect("/orders");
   }
 };
 

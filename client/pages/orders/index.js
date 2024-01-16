@@ -1,7 +1,8 @@
 import Link from "next/link";
 
+import redirect from "../../api/redirect";
+
 const OrdersIndex = ({ orders }) => {
-  console.log("component orders", orders);
   const orderList = orders.map(
     ({ id, ticket: { id: ticketId, title }, status }) => (
       <tr key={id}>
@@ -32,11 +33,9 @@ const OrdersIndex = ({ orders }) => {
 OrdersIndex.getInitialProps = async (context, client) => {
   try {
     const { data: orders } = await client.get("/api/orders");
-    console.log("orders", orders);
     return { orders };
   } catch (error) {
-    console.log("error", error);
-    return { redirect: { destination: "/", permanent: false } };
+    return redirect("/");
   }
 };
 
