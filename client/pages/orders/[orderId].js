@@ -47,8 +47,9 @@ const OrderRead = ({ order, currentUser }) => {
 
 OrderRead.getInitialProps = async (context, client) => {
   const { orderId } = context.query;
-  const { data: order } = await client.get(`/api/orders/${orderId}`);
-
+  const { data: order } = await client
+    .get(`/api/orders/${orderId}`)
+    .catch((error) => console.log(error?.response?.data?.errors));
   return { order };
 };
 

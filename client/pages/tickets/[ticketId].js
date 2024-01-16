@@ -24,8 +24,9 @@ const TicketRead = ({ ticket }) => {
 
 TicketRead.getInitialProps = async (context, client) => {
   const { ticketId } = context.query;
-  const { data: ticket } = await client.get(`/api/tickets/${ticketId}`);
-
+  const { data: ticket } = await client
+    .get(`/api/tickets/${ticketId}`)
+    .catch((error) => console.log(error?.response?.data?.errors));
   return { ticket };
 };
 
