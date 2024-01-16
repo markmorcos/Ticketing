@@ -35,7 +35,7 @@ OrdersIndex.getInitialProps = async (context, client) => {
     const { data: orders } = await client.get("/api/orders");
     return { orders };
   } catch (error) {
-    return redirect("/");
+    return redirect({ context, path: "/" });
   }
 };
 

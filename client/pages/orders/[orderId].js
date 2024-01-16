@@ -53,7 +53,7 @@ OrderRead.getInitialProps = async (context, client) => {
     const { data: order } = await client.get(`/api/orders/${orderId}`);
     return { order };
   } catch (error) {
-    return redirect("/orders");
+    return redirect({ context, path: "/orders" });
   }
 };
 
