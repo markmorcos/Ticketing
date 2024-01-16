@@ -4,6 +4,7 @@ metadata:
   name: ingress-srv
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "www.mark-ticketing-app.xyz"
 spec:
   ingressClassName: nginx
   rules:
