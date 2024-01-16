@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
     service.beta.kubernetes.io/do-loadbalancer-hostname: "www.mark-ticketing-app.xyz"
-    kubernetes.digitalocean.com/load-balancer-id: 2b131152-4311-4c4c-b7db-e87d0e5abf98
+    kubernetes.digitalocean.com/load-balancer-id: 4a7c34c0-587f-4508-9475-ea684862ae0f
 spec:
   ingressClassName: nginx
   rules:
