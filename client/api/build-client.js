@@ -5,7 +5,6 @@ export default ({ req }) => {
     return axios.create({
       baseURL: "http://www.mark-ticketing-app.xyz",
       headers: req.headers,
-      sec,
     });
   }
 
