@@ -5,12 +5,12 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
-    service.beta.kubernetes.io/do-loadbalancer-hostname: "mark-ticketing-app.xyz"
-    kubernetes.digitalocean.com/load-balancer-id: 76e7baac-0f55-4a7d-8926-712cb825df9d
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "www.mark-ticketing-app.xyz"
+    kubernetes.digitalocean.com/load-balancer-id: 2b131152-4311-4c4c-b7db-e87d0e5abf98
 spec:
   ingressClassName: nginx
   rules:
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/users/?(.*)
@@ -20,7 +20,7 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/tickets/?(.*)
@@ -30,7 +30,7 @@ spec:
                 name: tickets-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/orders/?(.*)
@@ -40,7 +40,7 @@ spec:
                 name: orders-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/payments/?(.*)
@@ -50,7 +50,7 @@ spec:
                 name: payments-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /
