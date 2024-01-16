@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/users/?(.*)
@@ -17,7 +17,7 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/tickets/?(.*)
@@ -27,7 +27,7 @@ spec:
                 name: tickets-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/orders/?(.*)
@@ -37,7 +37,7 @@ spec:
                 name: orders-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/expiration/?(.*)
@@ -47,7 +47,7 @@ spec:
                 name: expiration-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /api/payments/?(.*)
@@ -57,7 +57,7 @@ spec:
                 name: payments-srv
                 port:
                   number: 3000
-    - host: mark-ticketing-app.xyz
+    - host: www.mark-ticketing-app.xyz
       http:
         paths:
           - path: /
