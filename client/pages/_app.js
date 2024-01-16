@@ -22,7 +22,7 @@ AppComponent.getInitialProps = async ({ Component, ctx }) => {
     const response = await client.get("/api/users/current-user");
     currentUser = response.data.currentUser;
   } catch (error) {
-    console.log(error?.response?.data?.errors);
+    console.log("/api/users/current-user", error?.response?.data?.errors);
   }
   const pageProps = await Component.getInitialProps?.(ctx, client, currentUser);
 
