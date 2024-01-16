@@ -40,16 +40,6 @@ spec:
     - host: ticketing.dev
       http:
         paths:
-          - path: /api/expiration/?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: expiration-srv
-                port:
-                  number: 3000
-    - host: ticketing.dev
-      http:
-        paths:
           - path: /api/payments/?(.*)
             pathType: ImplementationSpecific
             backend:
